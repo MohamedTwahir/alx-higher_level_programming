@@ -1,5 +1,5 @@
 # 0x05. Python - Exceptions
-This particular directory contains task done with an intention of mastering the python concept of extension.
+This particular directory contains task done with an intention of mastering the python concept of exceptions.
 Resources were shared as per usual protocol in learning the new concepts.
 # Why Python programming is awesome
 In my own perspective i find python awesome since it easy to learn and its expressions and always in simplest human readable format.
