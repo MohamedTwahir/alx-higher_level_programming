@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Module defines a Rectangle.
+Module defines a Rectangle Object.
 """
+
 
 class Rectangle:
     """ Rectangle object with getter and setters
