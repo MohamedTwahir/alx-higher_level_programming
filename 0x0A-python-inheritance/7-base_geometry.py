@@ -16,8 +16,6 @@ class BaseGeometry:
         """
         Function for integer validation
         """
-        self.name = name
-        self.value = value
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
