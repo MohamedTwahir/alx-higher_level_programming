@@ -43,3 +43,31 @@ print(hellos)
 The argument to repr() may be any Python object:
 repr((x, y, ('spam', 'eggs')))
 "(32.5, 40000, ('spam', 'eggs'))"
+The string module contains a Template class that offers yet another way to substitute values into strings, using placeholders like $x and replacing them with values from a dictionary, but offers much less control of the formatting.
+Other modifiers can be used to convert the value before it is formatted. '!a' applies ascii(), '!s' applies str(), and '!r' applies repr():
+animals = 'eels'
+print(f'My hovercraft is full of {animals}.')
+My hovercraft is full of eels.
+print(f'My hovercraft is full of {animals!r}.')
+My hovercraft is full of 'eels'.
+* The = specifier can be used to expand an expression to the text of the expression, an equal sign, then the representation of the evaluated expression:
+bugs = 'roaches'
+count = 13
+area = 'living room'
+print(f'Debugging {bugs=} {count=} {area=}')
+Debugging bugs='roaches' count=13 area='living room'
+# Other useful functions and their examples
+* vars() - returns a dictionary containing all local variables.
+* str.rjust() - right-justifies a string in a field of a given width by padding it with spaces on the left.
+* str.ljust() & str.center() - do not write anything they just return a new strin
+* str.zfill() - pads a numeric string on the left with zeros. It understands about plus and minus signs.
+>>> '12'.zfill(5)
+'00012'
+>>> '-3.14'.zfill(7)
+'-003.14'
+>>> '3.14159265359'.zfill(5)
+'3.14159265359'
+# Reading and Writing Files
+open() returns a file object, and is most commonly used with two positional arguments and one keyword argument: open(filename, mode, encoding=None)
+>>> f = open('workfile', 'w', encoding="utf-8")
+
