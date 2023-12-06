@@ -6,4 +6,4 @@ def class_to_json(obj):
     """
     Function that implements __dict__ to return a dictionary description
     """
-    return obi.__dict__
+    return obj.__dict__
