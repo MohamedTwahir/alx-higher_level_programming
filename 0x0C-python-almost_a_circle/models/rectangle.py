@@ -85,7 +85,7 @@ class Rectangle(Base):
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Method that assigns argument to each attribute"""
         if args:
             for i in range(len(args)):
@@ -100,3 +100,17 @@ class Rectangle(Base):
                     self.x = args[i]
                 elif i == 4:
                     self.y = args[i]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if type(value) is not int:
+                        raise TypeError("id must be an integer")
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
