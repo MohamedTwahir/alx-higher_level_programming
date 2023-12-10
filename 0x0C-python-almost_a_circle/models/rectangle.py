@@ -23,7 +23,7 @@ class Rectangle(Base):
         """Width setter of the rectangle"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
-        if vlaue <= 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
@@ -72,3 +72,13 @@ class Rectangle(Base):
     def area(self):
         """method to calculate area of rectangle"""
         return self.width * self.height
+
+    def display(self):
+        """Public method that prints in the stdout"""
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
+
+    def __str__(self):
+        """Updating class Rectangle with string method"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.x, self.y, self.width, self.height)
