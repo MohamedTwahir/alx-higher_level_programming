@@ -84,3 +84,19 @@ class Rectangle(Base):
         """Updating class Rectangle with string method"""
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """Method that assigns argument to each attribute"""
+        if args:
+            for i in range(len(args)):
+                if type(args[i]) is not int:
+                    raise TypeError("id must be an integer")
+                    self.id = args[i]
+                elif i == 1:
+                    self.width = args[i]
+                elif i == 2:
+                    self.height = args[i]
+                elif i == 3:
+                    self.x = args[i]
+                elif i == 4:
+                    self.y = args[i]
