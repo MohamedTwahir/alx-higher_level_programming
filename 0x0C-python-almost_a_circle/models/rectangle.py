@@ -75,6 +75,8 @@ class Rectangle(Base):
 
     def display(self):
         """Public method that prints in the stdout"""
+        for i in range(self.y):
+            print()
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
 
