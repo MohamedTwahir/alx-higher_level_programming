@@ -2,6 +2,7 @@
 """A Base class"""
 
 import json
+import os
 
 
 class Base:
@@ -44,3 +45,13 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return "[]"
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Creating an instance of class Base"""
+        if cls.__name__ == 'Rectangle':
+            new_instance = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            new_instance = cls(1)
+        new_instance.update(**dictionary)
+        return new_instance
