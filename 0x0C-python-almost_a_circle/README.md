@@ -57,3 +57,29 @@ Order of using *args, **kwargs and formal args
 So if you want to use all three of these in functions then the order is
 
 some_func(fargs,*args,**kwargs)
+
+# JSON encoder and decoder
+JSON(javascript object notation) is a lightweight data interchange format inspired by javascript object literal syntax.
+json exposes an API familiar to users of the standard library marshal and pickle modules.
+* marshal module - contains functions that can read and write Python values in binary format.
+* pickle module - module implements binary protocols for serializing and de-serializing a Python object structure. “Pickling” is the process whereby a Python object hierarchy is converted into a byte stream, and “unpickling” is the inverse operation, whereby a byte stream (from a binary file or bytes-like object) is converted back into an object hierarchy. Pickling (and unpickling) is alternatively known as “serialization”, “marshalling,” 1 or “flattening”; however, to avoid confusion, the terms used here are “pickling” and “unpickling”.
+- Encoding basic Python object hierarchies:
+>>> import json
+>>> json.dumps(['foo', 'boo'])
+'["foo", "boo"]'
+from the above example dumps function is used in encoding.
+- Compact encoding
+>>> import json
+>>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))
+'[1,2,3,{"4":5,"6":7}]'
+- Decoding JSON:
+loads function is used in this operation
+>>> import json
+>>> json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
+['foo', {'bar': ['baz', None, 1.0, 2]}]
+>>> json.loads('"\\"foo\\bar"')
+'"foo\x08ar'
+>>> from io import StringIO
+>>> io = StringIO('["streaming API"]')
+>>> json.load(io)
+['streaming API']
