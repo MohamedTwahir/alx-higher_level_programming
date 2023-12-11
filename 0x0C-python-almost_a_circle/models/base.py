@@ -43,9 +43,12 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """method that returns string from json(decoding)"""
-        if json_string is None or len(json_string) == 0:
-            return "[]"
-        return json.loads(json_string)
+        new_len = []
+        if json_string is not None and json_string != '':
+            if type(json_string) != str:
+                raise TypeError("json_string must be a sting")
+            new_len = json.loads(json_string)
+        return new_len
 
     @classmethod
     def create(cls, **dictionary):
