@@ -3,7 +3,7 @@
 -- results should display score and name in the order
 -- records should be listed by asceding score
 -- database name will be passed as an argument
-SELECT `score` `name`
+SELECT `score`, `name`
 FROM `second_table`
 WHERE `name` != ""
 ORDER BY `score` DESC;
