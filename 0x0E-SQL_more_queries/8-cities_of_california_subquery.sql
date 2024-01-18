@@ -4,7 +4,7 @@
 -- not allowed to use JOIN keyword
 -- database name will be passed as an argument
 SELECT `id`, `name`
-  FROM `cities
+  FROM `cities`
 WHERE `state_id` IN
       (SELECT `id`
 	FROM `states`
